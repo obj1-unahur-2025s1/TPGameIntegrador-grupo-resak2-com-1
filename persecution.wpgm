@@ -1,0 +1,12 @@
+import juego.*
+import jugador.*
+import autos.*
+import wollok.game.*
+import misiles.*
+import vidas.*
+
+
+program persecution {
+  menu.iniciar()
+  game.start()
+}
