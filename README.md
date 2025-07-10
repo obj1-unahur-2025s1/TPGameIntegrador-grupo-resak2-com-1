@@ -1,22 +1,23 @@
-# Nombre del juego (<- borrar y completar)
-
+# Persecution run
 ## Equipo de desarrollo
 
-- Alguien
-- Persona
-- etc.
+- Magliotti Marcos
+- Lucas Arias
+- Monzon Cristian
 
 ## Capturas
 
-(agregar)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
 
 ## Reglas de Juego / Instrucciones
 
-(Escribirlas)
+Persecution Run es un juego desarrollado Wollok, donde el jugador conduce por una carretera esquivando vehículos o eliminándolos con misiles. El objetivo es sumar la mayor cantidad de puntos posible sin chocar. El juego cuenta con dos niveles de dificultad: fácil y difícil. Todo el desarrollo fue realizado en equipo, con aportes en programación, diseño y jugabilidad por parte de todos los integrantes.
 
 
 ## Otros
 
-- Curso/Facultad
-- Versión de wollok
-- Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
+- Comision 1/Unahur
+- Versión de wollok  4.0.0
+- Una vez terminado, no tenemos problemas en que el repositorio sea público

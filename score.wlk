@@ -1,14 +1,4 @@
 import jugador.*
-
-object juego {
-  method iniciar() {
-    puntos.addVisual()
-    puntos.ubicar()
-  }
-}
-
-
-
 class Numero{
      
     var property position = game.at(0, 0)

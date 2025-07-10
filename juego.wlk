@@ -33,6 +33,7 @@ object nivel {
     game.onTick(1000, "Sumar puntos", {jugador.sumarPuntos(10)})
     game.onTick(5000, "cargar misiles", {jugador.cargarMisiles()})
     game.onTick(100, "puntos", {puntos.sumarPuntaje(jugador.puntos())})
+    game.onTick(100, "misiles", {cantMisilesNumero.sumarMisiles(jugador.misiles())})
   }
 
    method colisiones() {
@@ -55,6 +56,8 @@ object nivel {
     game.addVisual(puntaje)
     puntos.ubicar()
     puntos.addVisual()
+    cantMisilesNumero.ubicar()
+    cantMisilesNumero.addVisual()
     
   }
 
@@ -65,7 +68,6 @@ object nivel {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 object nivel2 {
   
@@ -92,11 +94,10 @@ object nivel2 {
     game.onTick(1000, "Sumar puntos", {jugador.sumarPuntos(10)})
     game.onTick(5000, "cargar misiles", {jugador.cargarMisiles()})
     game.onTick(100, "puntos", {puntos.sumarPuntaje(jugador.puntos())})
+    game.onTick(100, "misiles", {cantMisilesNumero.sumarMisiles(jugador.misiles())})
   }
 
-   method colisiones() {
-    game.onCollideDo(jugador, {otroAuto => otroAuto.chocarAuto()})
-  }
+   method colisiones() {game.onCollideDo(jugador, {otroAuto => otroAuto.chocarAuto()})}
 
   method movimientoPersonaje(){
     keyboard.right().onPressDo({jugador.irHaciaDerecha()})
@@ -114,20 +115,16 @@ object nivel2 {
     game.addVisual(puntaje)
     puntos.ubicar()
     puntos.addVisual()
-    
+    cantMisilesNumero.ubicar()
+    cantMisilesNumero.addVisual()
   }
 
-  method detenerSonido() {
-    sonidoInGame.stop()
-  }
-
+  method detenerSonido() {sonidoInGame.stop()}
 }
 
   /*game.cellSize(54) */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 object menu {
   const sonido = game.sound("menu1.mp3")
   var property ultimoJugado = null

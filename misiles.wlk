@@ -1,5 +1,7 @@
 import wollok.game.*
 import jugador.*
+import score.*
+
 
 class Misil{
   var position
@@ -32,11 +34,33 @@ class Misil{
 
 object cantMisiles{
   method image() = "misil5.png"
-  method position()= game.at(13, 13)
+  method position()= game.at(1, 13)
+}
 
-  const property blanco = "FFFFFFFF"
+object cantMisilesNumero{
+    const property puntuacion = [new Numero(),new Numero()]
+    var numero = 0
 
-  method text()= "MISILES :" + jugador.misiles()
-  method textColor()= blanco
-  method textSize() = 25
+    method addVisual(){
+     puntuacion.forEach({v => game.addVisual(v)})
+    }
+
+    method numero(){
+        return numero
+    }
+
+    method sumarMisiles(unNumero){
+        numero = unNumero
+        self.cambiarPuntaje()
+    }
+
+    method ubicar(){
+        puntuacion.get(0).reubicar(3,13)
+        puntuacion.get(1).reubicar(4,13)
+    }
+
+     method cambiarPuntaje(){
+        puntuacion.get(1).cambiarNumero(numero % 10)
+        puntuacion.get(0).cambiarNumero(((numero/10).truncate(0))%10)
+    }
 }

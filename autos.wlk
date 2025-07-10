@@ -21,7 +21,7 @@ class Auto{
     }
     method moverseIzquierda(){
         position = position.left(1)
-        if (position.x() <= 0){
+        if (position.x() < 0){
             game.removeVisual(self)
             game.removeTickEvent(id)
         }
@@ -72,64 +72,33 @@ object explosion{
 class Auto2 inherits Auto {
     method initialize(){
         self.aumentarDurabilidad(1)
-    }
-    
+    } 
     override method velocidad() = 100
-    
 }
 
 
 
 object trafico {
     method generarAutos(){
-    const a1 = new Auto(position=game.at(8.randomUpTo(14), 5), image = "autoRojo.png")
-    const a2 = new Auto(position=game.at(12.randomUpTo(14), 9), image = "auto2.png" )
-    const a3 = new Auto(position=game.at(8.randomUpTo(14), 7), image = "auto2.png")
-    const a4 = new Auto(position=game.at(9.randomUpTo(14), 3), image = "auto7.png")
+    //const listaCarril= [3, 5, 7, 9]
+    //const listaPosicion= [10,12, 14, 16]
+    const a1 = new Auto(position=game.at(14.randomUpTo(24), 5), image = "autoRojo.png")
+    const a2 = new Auto(position=game.at(14.randomUpTo(24), 9), image = "auto2.png" )
+    const a3 = new Auto(position=game.at(14.randomUpTo(24), 7), image = "auto2.png")
+    const a4 = new Auto(position=game.at(14.randomUpTo(24), 3), image = "auto7.png")
     //const lista = [a1,a2,a3,a4]
 
     //lista.forEach({auto => game.addVisual(auto)})
 
     game.schedule(500, {game.addVisual(a1)}) 
-    game.schedule(1500, {game.addVisual(a2)}) 
-    game.schedule(1600, {game.addVisual(a3)}) 
-    game.schedule(1000, {game.addVisual(a4)}) 
+    game.schedule(900, {game.addVisual(a2)}) 
+    game.schedule(1300, {game.addVisual(a3)}) 
+    game.schedule(1700, {game.addVisual(a4)}) 
 
     game.schedule(500, {a1.desplazarse()}) 
     game.schedule(1500, {a2.desplazarse()}) 
     game.schedule(1600, {a3.desplazarse()}) 
     game.schedule(1000, {a4.desplazarse()}) 
-
-    //lista.forEach({auto => auto.chocarAuto()})
-
-    //lista.forEach({auto => auto.desplazarse()})
-  
- 
-   // lista.addAll([a1, a2, a3, a4])
-   // game.schedule(500, {game.addVisual(lista.get(0))}) 
-   // game.schedule(1500, {game.addVisual(lista.get(1))}) 
-   // game.schedule(2000, {game.addVisual(lista.get(2))}) 
-   // game.schedule(1000, {game.addVisual(lista.get(3))}) 
-//
-   // game.schedule(500, {a1.desplazarse()}) 
-   // game.schedule(1500, {a2.desplazarse()}) 
-   // game.schedule(2500, {a3.desplazarse()}) 
-   // game.schedule(1000, {a4.desplazarse()}) 
- // method generarAutos(){
-//
- //   var a1 = new Auto2(position=game.at(8.randomUpTo(14),5))
- //   var a2 = new Auto2(position=game.at(12.randomUpTo(14),9))
- //   var a3 = new Auto(position=game.at(8.randomUpTo(14),7))
- //   var a4 = new Auto(position=game.at(9.randomUpTo(14),3))
-//
- //   
-//
- //   
-//
- //   a1.chocarAuto()
- //   a2.chocarAuto()
- //   a3.chocarAuto()
- //   a4.chocarAuto()
     }
 }
 
@@ -144,9 +113,9 @@ object traficoDuro {
     //lista.forEach({auto => game.addVisual(auto)})
 
     game.schedule(500, {game.addVisual(a1)}) 
-    game.schedule(1500, {game.addVisual(a2)}) 
-    game.schedule(1600, {game.addVisual(a3)}) 
-    game.schedule(1000, {game.addVisual(a4)}) 
+    game.schedule(1700, {game.addVisual(a2)}) 
+    game.schedule(1300, {game.addVisual(a3)}) 
+    game.schedule(800, {game.addVisual(a4)}) 
 
     game.schedule(500, {a1.desplazarse()}) 
     game.schedule(1500, {a2.desplazarse()}) 
