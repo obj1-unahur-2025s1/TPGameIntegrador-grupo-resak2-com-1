@@ -7,7 +7,14 @@ import vidas.*
 
 object jugador {
 
-  var vida = 3
+  method reiniciar(){
+    vida = 3
+    image = "autoRojo2.png"
+    puntos = 0
+    misiles = 10
+  }
+
+  var property vida = 3
   var misiles = 10
   var puntos = 0
   
@@ -32,10 +39,13 @@ object jugador {
   }
 
   method autoEstado(){
-    if (vida == 2){
+    if (vida == 3){
+      image = "autoRojo2.png"
+    }
+    else if (vida == 2){
       image = "autoDañado.png"
     }
-    else{
+    else {
       image = "autoDañado2.png"
     }
   }
@@ -44,9 +54,9 @@ object jugador {
 
   method sumarPuntos(cantidad) {puntos = puntos + cantidad} 
 
-  method cargarMisiles(cantidad) {misiles = misiles + cantidad}
+  method cargarMisiles() {misiles = misiles + 2}
   
-   method irHaciaDerecha(){
+  method irHaciaDerecha(){
     if(position.right(1).x() <= 11){
       position = position.right(2)
     }
@@ -75,24 +85,11 @@ object jugador {
     
   }
 
+  method cargarVida(cantidad) {vida = vida + cantidad}
 
 
-  /*method terminarSiJugadorTieneVidaCero(){
-    if(vida == 0){
-      game.stop()
-      gameOver.finDelJuego()
-    }
-  }*/
 
 }
 
-
-
-/*
-object gameOver {
-  var property position = game.at(4,5)
-  method image() = "end.png"
-}
-*/
 
 

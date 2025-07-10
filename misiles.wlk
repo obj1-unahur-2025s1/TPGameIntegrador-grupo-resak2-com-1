@@ -31,8 +31,11 @@ class Misil{
 }
 
 object cantMisiles{
+  method image() = "misil5.png"
+  method position()= game.at(13, 13)
+
   const property blanco = "FFFFFFFF"
-  method position()= game.at(13, 11)
+
   method text()= "MISILES :" + jugador.misiles()
   method textColor()= blanco
   method textSize() = 25

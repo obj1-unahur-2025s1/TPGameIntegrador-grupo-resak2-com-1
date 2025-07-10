@@ -11,13 +11,14 @@ class Vida{
 
 object vidas {
 
-  const vida3 = new Vida(position=game.at(13, 12))
-  const vida2 = new Vida(position=game.at(12, 12))
-  const vida1 = new Vida(position=game.at(11, 12))
+  const vida3 = new Vida(position=game.at(13, 14))
+  const vida2 = new Vida(position=game.at(12, 14))
+  const vida1 = new Vida(position=game.at(11, 14))
 
-  const vidas = [vida1,vida2,vida3]
+  const vidas = []
   
   method añadirVidas(){
+    vidas.addAll([vida1,vida2,vida3])
     game.addVisual(vida1)
     game.addVisual(vida2)
     game.addVisual(vida3)
@@ -32,11 +33,16 @@ object vidas {
 
   method terminarJuego(){
     if (vidas.isEmpty()){
-      game.clear()
-      game.addVisual(final)
-      nivel.detenerSonido()
+
+      final.iniciar()
+      //game.clear()
+      //game.addVisual(final)
+      //nivel.detenerSonido()
       /*final.iniciar()
       game.addVisual(gameOver)*/
     }
   }
+
 }
+
+
